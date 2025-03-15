@@ -27,8 +27,9 @@ window.onload = function() {
     return arrayOfDomains;
   }
   const appendDotCom = (value) => {
-    return `${value}${extensions[Math.floor(Math.random() * extensions.length)]}`;
+    return `<li class="list-group-item bg-light">${value}${extensions[Math.floor(Math.random() * extensions.length)]}</li>`;
   };
   const completedArrayOfDomains = generateDomain(pronoun,adj,noun).map(appendDotCom);
   console.log(completedArrayOfDomains);
+  document.getElementById("domaintext").innerHTML = completedArrayOfDomains.join("");
 };
